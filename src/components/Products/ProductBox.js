@@ -3,7 +3,8 @@ import ImageBox from './ImageBox';
 import InfoBox from './InfoBox';
 
 function ProductBox(props) {
-  const { items, page, limit, offset } = props;
+  const { items, limit, offset } = props;
+
   return (
     <Container>
       {items.slice(offset, offset + limit).map((item, idx) => {

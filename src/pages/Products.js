@@ -20,7 +20,7 @@ function Products() {
 
   return (
     <>
-      <ProductBox items={items} page={page} limit={limit} offset={offset} />
+      <ProductBox items={items} limit={limit} offset={offset} />
       <Pagination page={page} setPage={setPage} pagesNum={pagesNum} />
     </>
   );
