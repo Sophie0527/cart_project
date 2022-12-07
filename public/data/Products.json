@@ -1,0 +1,117 @@
+[
+  {
+    "item_no": 1,
+    "item_name": "모던 웜그레이 암막커튼",
+    "category": "커튼",
+    "image_url": "../images/모던웜그레이암막커튼.jpg",
+    "price": 175000,
+    "score": 20
+  },
+  {
+    "item_no": 2,
+    "item_name": "배색 펄 암막커튼",
+    "category": "커튼",
+    "image_url": "../images/배색암막커튼.jpg",
+    "price": 142000,
+    "score": 30
+  },
+  {
+    "item_no": 3,
+    "item_name": "스프링 엘로우 레이스 이중커튼",
+    "category": "커튼",
+    "image_url": "../images/스프링엘로우커튼.jpg",
+    "price": 1240000,
+    "score": 35
+  },
+  {
+    "item_no": 4,
+    "item_name": "헤링본 암막커튼",
+    "category": "커튼",
+    "image_url": "../images/헤링본암막커튼.jpg",
+    "price": 165000,
+    "score": 12,
+    "availableCoupon": false
+  },
+  {
+    "item_no": 5,
+    "item_name": "인디안 핑크 커튼",
+    "category": "커튼",
+    "image_url": "../images/핑크커튼.jpg",
+    "price": 23000,
+    "score": 64
+  },
+  {
+    "item_no": 6,
+    "item_name": "아이방 이중커튼",
+    "category": "커튼",
+    "image_url": "../images/아이방커튼.jpg",
+    "price": 137600,
+    "score": 20
+  },
+  {
+    "item_no": 7,
+    "item_name": "배색 우드블라인드",
+    "category": "블라인드",
+    "image_url": "../images/배색우드블라인드.jpg",
+    "price": 139900,
+    "score": 19,
+    "availableCoupon": false
+  },
+  {
+    "item_no": 8,
+    "item_name": "아이보리 암막 롤스크린",
+    "category": "블라인드",
+    "image_url": "../images/아이보리암막롤스크린.jpg",
+    "price": 125000,
+    "score": 45
+  },
+  {
+    "item_no": 9,
+    "item_name": "차르르 거실 커튼",
+    "category": "커튼",
+    "image_url": "../images/차르르거실커튼.jpg",
+    "price": 112900,
+    "score": 30,
+    "availableCoupon": false
+  },
+  {
+    "item_no": 10,
+    "item_name": "차르르 나비주름 커튼",
+    "category": "커튼",
+    "image_url": "../images/차르르나비주름커튼.jpg",
+    "price": 144000,
+    "score": 30
+  },
+  {
+    "item_no": 11,
+    "item_name": "상가 차르르 커튼",
+    "category": "커튼",
+    "image_url": "../images/상가차르르커튼.jpg",
+    "price": 95900,
+    "score": 15
+  },
+  {
+    "item_no": 12,
+    "item_name": "블랙 우드 블라인드",
+    "category": "블라인드",
+    "image_url": "../images/블랙우드블라인드.jpg",
+    "price": 93000,
+    "score": 22
+  },
+  {
+    "item_no": 13,
+    "item_name": "베이지 나뭇잎 이중커튼",
+    "category": "커튼",
+    "image_url": "../images/베이지나뭇잎커튼.jpg",
+    "price": 153000,
+    "score": 29
+  },
+  {
+    "item_no": 14,
+    "item_name": "화이트 우드 블라인드",
+    "category": "블라인드",
+    "image_url": "../images/화이트우드블라인드.jpg",
+    "price": 93000,
+    "score": 19
+  }
+]

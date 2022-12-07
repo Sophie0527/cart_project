@@ -1,9 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import ProductBox from '../components/Products/ProductBox';
 
 function Products() {
-  return <Container>Products</Container>;
+  return (
+    <>
+      <ProductBox />
+    </>
+  );
 }
 export default Products;
-
-const Container = styled.div``;

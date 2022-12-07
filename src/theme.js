@@ -32,6 +32,11 @@ const colors = {
   lt_black: '#595959',
   black: '#000000',
   red: '#f75151',
+  lt_beige: '#eeeae5',
+  beige: '#d2c8bd',
+  camel: '#bb9477',
+  brown: '#82593f',
+  charcoal: '#1d1c1a',
 };
 const device = {
   galaxy_fold: `only screen and (max-width: 280px)`,
