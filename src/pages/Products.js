@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from '../components/Header/Header';
 import ProductBox from '../components/Products/ProductBox';
 import Pagination from '../components/Products/Pagination';
 
@@ -9,7 +10,7 @@ function Products() {
     axios.get('http://localhost:3000/data/Products.json').then((res) => {
       setItems(res.data);
     });
-  }, []);
+  }, [items]);
 
   // 5개씩 보여주는 페이지네이션
   const [page, setPage] = useState(1);
@@ -20,6 +21,7 @@ function Products() {
 
   return (
     <>
+      <Header />
       <ProductBox items={items} limit={limit} offset={offset} />
       <Pagination page={page} setPage={setPage} pagesNum={pagesNum} />
     </>
