@@ -7,14 +7,20 @@ function CartBox({ cartItems }) {
   return (
     <Container>
       <h1>장바구니</h1>
-      {cartItems.map((item, idx) => {
-        return (
-          <Products key={idx}>
-            <CartImageBox item={item} />
-            <CartInfoBox item={item} />
-          </Products>
-        );
-      })}
+      {cartItems.length === 0 || cartItems === null ? (
+        <Products>
+          <Empty>장바구니에 담긴 상품이 없습니다.</Empty>
+        </Products>
+      ) : (
+        cartItems.map((item, idx) => {
+          return (
+            <Products key={idx}>
+              <CartImageBox item={item} />
+              <CartInfoBox item={item} />
+            </Products>
+          );
+        })
+      )}
     </Container>
   );
 }
@@ -31,4 +37,9 @@ const Products = styled.div`
   padding: 20px 0;
   display: flex;
   border-bottom: 1px solid ${({ theme }) => theme.colors.beige};
+`;
+const Empty = styled.span`
+  font-size: 22px;
+  width: 600px;
+  color: ${({ theme }) => theme.colors.charcoal};
 `;
