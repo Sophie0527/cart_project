@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../components/Header/Header';
 import ProductBox from '../components/Products/ProductBox';
 import Pagination from '../components/Products/Pagination';
+import Footer from '../components/Footer/Footer';
 
 function Products() {
   const [items, setItems] = useState([]);
@@ -24,6 +25,7 @@ function Products() {
       <Header />
       <ProductBox items={items} limit={limit} offset={offset} />
       <Pagination page={page} setPage={setPage} pagesNum={pagesNum} />
+      <Footer />
     </>
   );
 }

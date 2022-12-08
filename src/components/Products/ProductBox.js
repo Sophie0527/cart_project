@@ -26,7 +26,7 @@ const Container = styled.div`
   text-align: center;
   flex-wrap: wrap;
   width: 100%;
-  padding-top: 100px;
+  padding: 100px 0;
 `;
 const Products = styled.div`
   padding: 10px 10px 40px;
