@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function MiddleHeader() {
@@ -10,14 +11,32 @@ function MiddleHeader() {
     window.addEventListener('scroll', updateScroll);
   });
 
+  const navigate = useNavigate();
+
   return (
     <Container className={scrollPosition > 100 && 'change'}>
-      <LeftBox>{scrollPosition > 100 && <h2>Megachang</h2>}</LeftBox>
+      <LeftBox>
+        {scrollPosition > 100 && (
+          <h2
+            onClick={() => {
+              navigate('/');
+            }}
+          >
+            Megachang
+          </h2>
+        )}
+      </LeftBox>
       <RightBox>
         <h3>JOIN</h3>
         <h3>LOGIN</h3>
         <h3>ORDER</h3>
-        <h3>CART</h3>
+        <h3
+          onClick={() => {
+            navigate('/cart');
+          }}
+        >
+          CART
+        </h3>
       </RightBox>
     </Container>
   );

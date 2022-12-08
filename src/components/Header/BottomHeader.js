@@ -1,9 +1,17 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function BottomHeader() {
+  const navigate = useNavigate();
   return (
     <Container>
-      <h1>Megachang</h1>
+      <h1
+        onClick={() => {
+          navigate('/');
+        }}
+      >
+        Megachang
+      </h1>
     </Container>
   );
 }
