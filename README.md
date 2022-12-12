@@ -2,6 +2,8 @@
 
 localStorage를 활용한 장바구니 페이지 구현하기.
 
+- 배포 : [배포 바로가기](https://cart-megachang.netlify.app/)
+
 ## `프로젝트 설치 및 실행 방법`
 
 ### ✅ 설치방법
