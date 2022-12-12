@@ -3,7 +3,21 @@ import ImageBox from './ImageBox';
 import InfoBox from './InfoBox';
 
 function ProductBox(props) {
-  const { items, limit, offset } = props;
+  const { items, limit, offset, sort } = props;
+
+  if (sort === '인기순') {
+    items.sort((a, b) => {
+      return a.score - b.score;
+    });
+  } else if (sort === '낮은 가격순') {
+    items.sort((a, b) => {
+      return a.price - b.price;
+    });
+  } else if (sort === '높은 가격순') {
+    items.sort((a, b) => {
+      return b.price - a.price;
+    });
+  }
 
   return (
     <Container>
@@ -26,7 +40,7 @@ const Container = styled.div`
   text-align: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 100px 0;
+  padding-bottom: 100px;
 `;
 const Products = styled.div`
   padding: 10px 10px 40px;

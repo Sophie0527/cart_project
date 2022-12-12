@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../components/Header/Header';
+import SortPoduct from '../components/Products/SortPoduct';
 import ProductBox from '../components/Products/ProductBox';
 import Pagination from '../components/Products/Pagination';
 import Footer from '../components/Footer/Footer';
@@ -12,6 +14,14 @@ function Products() {
       setItems(res.data);
     });
   }, []);
+  // 상품의 score를 기준으로 내림차순으로 정렬
+  items.sort((a, b) => {
+    return a.score - b.score;
+  });
+
+  // query의 정보로 sorting하기 위해
+  let query = new URLSearchParams(useLocation().search);
+  let sort = query.get('sort');
 
   // 5개씩 보여주는 페이지네이션
   const [page, setPage] = useState(1);
@@ -23,7 +33,8 @@ function Products() {
   return (
     <>
       <Header />
-      <ProductBox items={items} limit={limit} offset={offset} />
+      <SortPoduct sort={sort} />
+      <ProductBox items={items} limit={limit} offset={offset} sort={sort} />
       <Pagination page={page} setPage={setPage} pagesNum={pagesNum} />
       <Footer />
     </>
