@@ -30,4 +30,14 @@ const Container = styled.div`
   padding: 100px 40px;
   display: flex;
   justify-content: center;
+  @media ${({ theme }) => theme.device.tabletL} {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    padding: 20px 10px;
+    justify-content: flex-start;
+    min-height: 500px;
+  }
 `;

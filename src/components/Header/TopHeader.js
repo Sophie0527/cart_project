@@ -19,5 +19,8 @@ const Container = styled.div`
     font-size: 18px;
     letter-spacing: 2px;
     color: ${({ theme }) => theme.colors.lt_beige};
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      font-size: 16px;
+    }
   }
 `;

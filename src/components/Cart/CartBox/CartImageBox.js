@@ -23,6 +23,10 @@ const Container = styled.div`
   height: 200px;
   overflow: hidden;
   cursor: pointer;
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 140px;
+    height: 140px;
+  }
   img {
     width: 200px;
     height: 200px;
@@ -30,6 +34,10 @@ const Container = styled.div`
     transition: all 0.2s linear;
     :hover {
       transform: scale(1.1);
+    }
+    @media ${({ theme }) => theme.device.tablet} {
+      width: 140px;
+      height: 140px;
     }
   }
 `;
@@ -43,10 +51,20 @@ const AvailableCoupon = styled.div`
   height: 30px;
   transform: translate(0%, -250%);
   border-radius: 0px 20px;
+  @media ${({ theme }) => theme.device.tablet} {
+    transform: translate(0%, -184%);
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 80px;
+    height: 30px;
+  }
   span {
     color: ${({ theme }) => theme.colors.white};
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
+    @media ${({ theme }) => theme.device.mobile} {
+      font-size: 12px;
+    }
   }
 `;

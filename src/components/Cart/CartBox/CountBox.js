@@ -71,6 +71,14 @@ const ButtonBox = styled.div`
     width: 30px;
     height: 30px;
     background-color: ${({ theme }) => theme.colors.white};
+    @media ${({ theme }) => theme.device.tablet} {
+      width: 24px;
+      height: 24px;
+    }
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 const Button = styled.button`
@@ -81,4 +89,13 @@ const Button = styled.button`
   font-size: ${({ theme }) => theme.fontSize.medium_3};
   background-color: ${({ theme }) => theme.colors.lt_beige};
   color: ${({ theme }) => theme.colors.charcoal};
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 26px;
+    height: 26px;
+  }
+  @media ${({ theme }) => theme.device.galaxy_fold} {
+    font-size: ${({ theme }) => theme.fontSize.medium};
+    width: 20px;
+    height: 20px;
+  }
 `;

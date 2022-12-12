@@ -30,5 +30,8 @@ const Container = styled.div`
     :hover {
       color: ${({ theme }) => theme.colors.charcoal};
     }
+    @media ${({ theme }) => theme.device.tablet} {
+      font-size: 20px;
+    }
   }
 `;

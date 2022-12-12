@@ -37,23 +37,56 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 30px;
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-left: 14px;
+  }
+  @media ${({ theme }) => theme.device.galaxy_fold} {
+    padding-left: 6px;
+  }
 `;
 const InfoBox = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
+  @media ${({ theme }) => theme.device.tablet} {
+    padding-bottom: 0px;
+  }
 `;
 const Info = styled.div`
   min-width: 400px;
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: 200px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 120px;
+  }
+  @media ${({ theme }) => theme.device.galaxy_fold} {
+    min-width: 80px;
+  }
   h5 {
     font-size: 18px;
     color: ${({ theme }) => theme.colors.camel};
     padding: 10px 0;
+    @media ${({ theme }) => theme.device.tablet} {
+      font-size: 14px;
+    }
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      font-size: 12px;
+    }
   }
   h4 {
     font-size: 22px;
     letter-spacing: 1px;
     padding: 10px 0;
+    @media ${({ theme }) => theme.device.tablet} {
+      font-size: 18px;
+    }
+    @media ${({ theme }) => theme.device.mobile} {
+      font-size: 16px;
+    }
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      font-size: 14px;
+    }
   }
 `;
 const Price = styled.div`
@@ -62,5 +95,14 @@ const Price = styled.div`
   justify-content: center;
   h3 {
     font-size: 22px;
+    @media ${({ theme }) => theme.device.tablet} {
+      font-size: 18px;
+    }
+    @media ${({ theme }) => theme.device.mobile} {
+      font-size: 16px;
+    }
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      font-size: 14px;
+    }
   }
 `;

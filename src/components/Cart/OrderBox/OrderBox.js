@@ -30,6 +30,15 @@ export default OrderBox;
 const Container = styled.div`
   min-width: 400px;
   padding-left: 20px;
+  @media ${({ theme }) => theme.device.tabletL} {
+    padding-left: 0px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    min-width: 300px;
+  }
+  @media ${({ theme }) => theme.device.galaxy_fold} {
+    min-width: 260px;
+  }
   h1 {
     font-size: 26px;
   }

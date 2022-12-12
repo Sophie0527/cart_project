@@ -28,5 +28,8 @@ const Container = styled.div`
     font-style: italic;
     color: ${({ theme }) => theme.colors.charcoal};
     cursor: pointer;
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      font-size: 30px;
+    }
   }
 `;

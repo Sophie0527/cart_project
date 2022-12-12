@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 function BottomFooter() {
   return (
     <Container>
@@ -33,9 +34,21 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0 20px;
+  }
+  @media ${({ theme }) => theme.device.galaxy_fold} {
+    padding: 0 10px;
+  }
   span {
     font-size: 20px;
     letter-spacing: 1px;
+    @media ${({ theme }) => theme.device.mobile} {
+      font-size: 14px;
+    }
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      font-size: 12px;
+    }
   }
 `;
 const SnsBox = styled.div`
@@ -43,5 +56,11 @@ const SnsBox = styled.div`
     width: 36px;
     object-fit: cover;
     margin: 5px;
+    @media ${({ theme }) => theme.device.mobile} {
+      width: 20px;
+    }
+    @media ${({ theme }) => theme.device.galaxy_fold} {
+      width: 12px;
+    }
   }
 `;
