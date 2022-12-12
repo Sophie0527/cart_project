@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import CountBox from './CountBox';
 import DeleteBox from './DeleteBox';
 
-function CartInfoBox({ item }) {
+function CartInfoBox(props) {
+  const { item, cartItems, setCartItems } = props;
   return (
     <Container>
       <InfoBox>
@@ -17,7 +18,11 @@ function CartInfoBox({ item }) {
           <p>원</p>
         </Price>
       </InfoBox>
-      <DeleteBox />
+      <DeleteBox
+        item={item}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
     </Container>
   );
 }

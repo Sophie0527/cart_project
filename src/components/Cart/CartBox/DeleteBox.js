@@ -2,10 +2,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
-function DeleteBox() {
+function DeleteBox(props) {
+  const { item, cartItems, setCartItems } = props;
+
+  const deleteCart = () => {
+    const deleteData = cartItems.filter(
+      (cartItem) => cartItem.item_no !== item.item_no
+    );
+    localStorage.setItem('cart_megachang', JSON.stringify(deleteData));
+    setCartItems(deleteData);
+  };
   return (
     <Container>
-      <FontAwesomeIcon icon={faTrashCan} alt="삭제" />
+      <FontAwesomeIcon icon={faTrashCan} alt="삭제" onClick={deleteCart} />
     </Container>
   );
 }
@@ -17,5 +26,9 @@ const Container = styled.div`
   svg {
     font-size: 24px;
     color: ${({ theme }) => theme.colors.brown};
+    cursor: pointer;
+    :hover {
+      color: ${({ theme }) => theme.colors.charcoal};
+    }
   }
 `;

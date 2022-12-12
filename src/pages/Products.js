@@ -11,7 +11,7 @@ function Products() {
     axios.get('http://localhost:3000/data/Products.json').then((res) => {
       setItems(res.data);
     });
-  }, [items]);
+  }, []);
 
   // 5개씩 보여주는 페이지네이션
   const [page, setPage] = useState(1);

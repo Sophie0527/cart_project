@@ -1,9 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 import CartImageBox from './CartImageBox';
 import CartInfoBox from './CartInfoBox';
 
-function CartBox({ cartItems }) {
+function CartBox(props) {
+  const { cartItems, setCartItems } = props;
   return (
     <Container>
       <h1>장바구니</h1>
@@ -16,7 +16,11 @@ function CartBox({ cartItems }) {
           return (
             <Products key={idx}>
               <CartImageBox item={item} />
-              <CartInfoBox item={item} />
+              <CartInfoBox
+                item={item}
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+              />
             </Products>
           );
         })
