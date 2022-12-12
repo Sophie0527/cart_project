@@ -1,13 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function CountBox({ item }) {
+function CountBox(props) {
+  const { item, cartItems, setCartItems } = props;
+
+  const countUp = () => {
+    const countUpData = cartItems.map((newItemData) => {
+      if (newItemData.item_no === item.item_no) {
+        return {
+          ...newItemData,
+          count: newItemData.count + 1,
+          totalPrice: newItemData.totalPrice + item.price,
+        };
+      } else {
+        return {
+          ...newItemData,
+        };
+      }
+    });
+    localStorage.setItem('cart_megachang', JSON.stringify(countUpData));
+    setCartItems(countUpData);
+  };
+
+  const countDown = () => {
+    if (item.count > 1) {
+      const countDownData = cartItems.map((newItemData) => {
+        if (newItemData.item_no === item.item_no) {
+          return {
+            ...newItemData,
+            count: newItemData.count - 1,
+            totalPrice: newItemData.totalPrice - item.price,
+          };
+        } else {
+          return {
+            ...newItemData,
+          };
+        }
+      });
+      localStorage.setItem('cart_megachang', JSON.stringify(countDownData));
+      setCartItems(countDownData);
+    }
+  };
+
   return (
     <Container>
       <ButtonBox>
-        <Button>-</Button>
+        <Button onClick={countDown}>-</Button>
         <span>{item.count}</span>
-        <Button>+</Button>
+        <Button onClick={countUp}>+</Button>
       </ButtonBox>
     </Container>
   );

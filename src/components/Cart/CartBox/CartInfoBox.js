@@ -11,7 +11,11 @@ function CartInfoBox(props) {
         <Info>
           <h5>{item.category}</h5>
           <h4>{item.item_name}</h4>
-          <CountBox item={item} />
+          <CountBox
+            item={item}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          />
         </Info>
         <Price>
           <h3>{item.totalPrice.toLocaleString()}</h3>
