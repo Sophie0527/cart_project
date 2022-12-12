@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 function PriceBox(props) {
-  const { sumTotalPrice, discountPrice } = props;
+  const { sumTotalPrice, discountPrice, couponType, sumCouponItemPrice } =
+    props;
   return (
     <Container>
       <ProductPrice>
@@ -15,6 +16,15 @@ function PriceBox(props) {
       </ProductPrice>
       <DiscountPrice>
         <span>할인 금액</span>
+        <p>
+          {couponType === undefined && null}
+          {sumCouponItemPrice > 0 &&
+            couponType === 'rate' &&
+            '10% 할인 쿠폰 적용가'}
+          {sumCouponItemPrice > 0 &&
+            couponType === 'amount' &&
+            '10,000원 할인 쿠폰 적용가'}
+        </p>
         <span>{discountPrice.toLocaleString()}</span>
       </DiscountPrice>
     </Container>
@@ -49,8 +59,13 @@ const ProductPrice = styled.div`
 const DiscountPrice = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 10px;
   span {
     font-size: 22px;
+  }
+  p {
+    font-size: 16px;
+    color: ${({ theme }) => theme.colors.camel};
   }
 `;

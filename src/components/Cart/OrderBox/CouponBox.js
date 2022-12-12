@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
-function CouponBox() {
+function CouponBox(props) {
+  const { setCouponType, sumCouponItemPrice } = props;
+
   // 쿠폰 모달
   const [couponOpen, setCouponOpen] = useState(false);
   const couponModal = () => {
     setCouponOpen(!couponOpen);
+  };
+  // 쿠폰 종류
+  const [coupons, setCoupons] = useState([]);
+  useEffect(() => {
+    axios.get('http://localhost:3000/data/Coupons.json').then((res) => {
+      setCoupons(res.data);
+    });
+  }, []);
+
+  // 쿠폰 선택 시 이벤트가 일어나는 함수
+  const selectCoupon = (idx) => {
+    setCouponOpen(false);
+    setCouponType(coupons[idx].type);
   };
 
   return (
@@ -21,12 +37,29 @@ function CouponBox() {
           alt="down"
         />
       </Title>
-      {couponOpen ? (
+
+      {couponOpen && (
         <CouponModal>
-          <span>만원 할인 쿠폰</span>
-          <span>10% 할인 쿠폰</span>
+          {sumCouponItemPrice > 0 ? (
+            <>
+              {coupons.map((coupon, idx) => {
+                return (
+                  <span
+                    key={idx}
+                    onClick={() => {
+                      selectCoupon(idx);
+                    }}
+                  >
+                    {coupon.title}
+                  </span>
+                );
+              })}
+            </>
+          ) : (
+            <span>현재 쿠폰사용이 불가합니다.</span>
+          )}
         </CouponModal>
-      ) : null}
+      )}
     </Container>
   );
 }
